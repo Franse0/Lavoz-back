@@ -37,38 +37,14 @@
             noticiasService.borrarNoticia(id);
         }
 
-        /*@CrossOrigin(origins = "http://localhost:4200")
-        @PostMapping("/noticia/cargar")
-        public void crearNoticia(@RequestParam("nombre") String titulo,
-                                 @RequestParam("cuerpo") String cuerpo,
-                                 @RequestParam("resumen") String resumen,
-                                 @RequestParam("rutaImg") String fecha_publi,
-                                 @RequestParam("rutaImg") String url_img,
-                                 @RequestParam("rutaImg") String categoria,
-                                 @RequestParam("file") MultipartFile imagen){
-            noticiasService.nuevaNoticia(titulo, cuerpo, resumen, fecha_publi,url_img, imagen, categoria );
-        }
 
 
 
 
 
-        @GetMapping("/noticia/imagen/{id}")
-        public ResponseEntity<byte[]> obtenerImagenDeNoticia(@PathVariable Long id) {
-            // Lógica para obtener los bytes de la imagen de la noticia con el ID proporcionado
-            byte[] imagenBytes = noticiasService.obtenerBytesDeImagen(id);
 
-            // Devuelve los bytes de la imagen como una respuesta HTTP
-            return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(imagenBytes);
-        }
-*/
-        @GetMapping("/noticia/buscar/{parametro}")
-        public ResponseEntity<List<Noticias>>buscarNoticia(@PathVariable String parametro){
-            List<Noticias> resultados = noticiasService.buscarFiestasNombreUbicacion(parametro);
-            return ResponseEntity.ok(resultados);
-        }
-        @CrossOrigin(origins = "http://localhost:4200")
-        @PostMapping("/noticia/cargar")
+         @CrossOrigin(origins = "http://localhost:4200")
+         @PostMapping("/noticia/cargar")
         public void crearNoticia(@RequestBody Noticias noticias){
             noticiasService.nuevaNoticia(noticias);
         }

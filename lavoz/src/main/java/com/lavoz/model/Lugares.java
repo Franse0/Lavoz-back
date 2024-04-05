@@ -15,19 +15,21 @@ public class Lugares {
     private String nombre;
     private String telefono;
     private String ubicacion;
+    @Column(length = 2500, columnDefinition = "TEXT")
     private String ubicacion_map;
     private String horario;
     private String img;
     private String ruta_img;
     private String instagram;
     private String facebook;
+    private String categoria;
 
     public Lugares() {
     }
 
-    public Lugares(int id, String nombre, String telefono, String ubicacion,
-                   String ubicacion_map, String horario, String img,
-                   String ruta_img, String instagram, String facebook) {
+    public Lugares(int id, String nombre, String telefono, String ubicacion, String ubicacion_map,
+                   String horario, String img, String ruta_img, String instagram, String facebook,
+                   String categoria) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -38,5 +40,6 @@ public class Lugares {
         this.ruta_img = ruta_img;
         this.instagram = instagram;
         this.facebook = facebook;
+        this.categoria = categoria;
     }
 }

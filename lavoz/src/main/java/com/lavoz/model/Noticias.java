@@ -24,14 +24,22 @@ public class Noticias {
     private String url_img;
     private String categoria;
 
-
-    public Noticias() {
+    public Noticias(Long id, String titulo, String cuerpo, String resumen,
+                    String fecha_publi,  String url_img,
+                    String categoria) {
+        this.id = id;
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+        this.resumen = resumen;
+        this.fecha_publi = fecha_publi;
+        this.url_img = url_img;
+        this.categoria = categoria;
     }
 
-    //public Noticias(String titulo, String cuerpo, String resumen,
-      //              String fecha_publi, byte[] img, String url_img, String categoria) {
-    public Noticias(String titulo, String cuerpo, String resumen,
-        String fecha_publi, String img, String url_img, String categoria) {
+    public Noticias(Long id, String titulo, String cuerpo, String resumen,
+                    String fecha_publi, String img, String url_img,
+                    String categoria) {
+        this.id = id;
         this.titulo = titulo;
         this.cuerpo = cuerpo;
         this.resumen = resumen;
@@ -40,6 +48,10 @@ public class Noticias {
         this.url_img = url_img;
         this.categoria = categoria;
     }
+
+    public Noticias() {
+    }
+
 
     public void encodeCuerpoHtml() {
         this.cuerpo = HtmlEncodingHelper.encodeHtml(this.cuerpo);
