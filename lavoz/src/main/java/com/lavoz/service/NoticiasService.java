@@ -44,4 +44,7 @@ public class NoticiasService implements INoticiasService {
     public List<Noticias> bucarNoticias(@PathVariable String parametro){
         return noticiasRepo.buscarIgnoreCase(parametro);
     }
+    public List<Noticias> buscarFiestasNombreUbicacion(@PathVariable String parametro){
+        return noticiasRepo.buscarIgnoreCase(parametro);
+    }
 }

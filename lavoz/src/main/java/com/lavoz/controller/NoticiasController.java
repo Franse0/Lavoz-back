@@ -38,7 +38,11 @@
         }
 
 
-
+        @GetMapping("/noticia/buscar/{parametro}")
+        public ResponseEntity<List<Noticias>>buscarNoticia(@PathVariable String parametro){
+            List<Noticias> resultados = noticiasService.buscarFiestasNombreUbicacion(parametro);
+            return ResponseEntity.ok(resultados);
+        }
 
 
 
