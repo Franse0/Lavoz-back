@@ -13,7 +13,7 @@
 
     @RestController
     //@RequestMapping("/noticia")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping("/api")
 
     public class NoticiasController {
 
